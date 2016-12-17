@@ -1,5 +1,5 @@
 name: fficxx
-version: '0.2.999'
+version: '0.2.1'
 synopsis: automatic C++ binding generation
 description: automatic C++ binding generation
 category: FFI Tools
