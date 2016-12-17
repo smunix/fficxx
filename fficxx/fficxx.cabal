@@ -1,73 +1,80 @@
-Name:           fficxx
-Version:        0.2.999
-Synopsis:       automatic C++ binding generation
-Description:    automatic C++ binding generation
-License:        BSD3
-License-file:   LICENSE
-Author:         Ian-Woo Kim
-Maintainer:     Ian-Woo Kim <ianwookim@gmail.com>
-Build-Type:     Simple
-Category:       FFI Tools
-Cabal-Version:  >= 1.8
-Data-files: 
-            sample/cxxlib/include/*.h
-            sample/cxxlib/src/*.cpp
-            sample/cxxlib/Makefile
-            sample/mysample-generator/MySampleGen.hs
-            sample/mysample-generator/use_mysample.hs
-            sample/snappy-generator/SnappyGen.hs
-            sample/snappy-generator/testSnappy.hs
+-- This file has been generated from package.yaml by hpack version 0.15.0.
+--
+-- see: https://github.com/sol/hpack
 
-Source-repository head
+name:           fficxx
+version:        0.2.999
+synopsis:       automatic C++ binding generation
+description:    automatic C++ binding generation
+category:       FFI Tools
+author:         Ian-Woo Kim
+maintainer:     Ian-Woo Kim <ianwookim@gmail.com>
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+data-files:
+  sample/cxxlib/include/A.h
+  sample/cxxlib/include/B.h
+  sample/cxxlib/Makefile
+  sample/cxxlib/src/A.cpp
+  sample/cxxlib/src/B.cpp
+  sample/mysample-generator/MySampleGen.hs
+  sample/mysample-generator/use_mysample.hs
+  sample/snappy-generator/SnappyGen.hs
+  sample/snappy-generator/testSnappy.hs
+
+source-repository head
   type: git
   location: http://www.github.com/wavewave/fficxx
 
-Library
-  hs-source-dirs: lib
-  ghc-options:  -Wall -funbox-strict-fields -fno-warn-unused-do-bind
+library
+  hs-source-dirs:
+    lib
+  ghc-options: -Wall -funbox-strict-fields -fno-warn-unused-do-bind
   ghc-prof-options: -caf-all -auto-all
-  Build-Depends: base == 4.*,
-                 Cabal,
-                 bytestring,
-                 containers,
-                 data-default,
-                 directory,
-                 either,
-                 errors,
-                 filepath>1,
-                 hashable,
-                 haskell-src-exts,
-                 lens > 3,
-                 mtl>2,
-                 process,
-                 pureMD5,
-                 split,
-                 transformers >= 0.3,
-                 template,
-                 template-haskell,
-                 text,
-                 unordered-containers
-                 
-
-  Exposed-Modules:
-                   FFICXX.Generate.Builder
-                   FFICXX.Generate.Type.Class
-                   FFICXX.Generate.Type.Module
-                   FFICXX.Generate.Type.PackageInterface
-                   FFICXX.Generate.Config
-                   FFICXX.Generate.Code.MethodDef
-                   FFICXX.Generate.Code.Cpp
-                   FFICXX.Generate.Code.HsFrontEnd
-                   FFICXX.Generate.Code.HsFFI
-                   FFICXX.Generate.Code.Cabal
-                   FFICXX.Generate.Code.Dependency
-                   FFICXX.Generate.Generator.Driver
-                   FFICXX.Generate.Generator.ContentMaker
-                   FFICXX.Generate.Util
-                   FFICXX.Generate.Util.HaskellSrcExts
-                   FFICXX.Generate.QQ.Verbatim
-                   FFICXX.Generate.Type.Annotate
-                   FFICXX.Paths_fficxx
-  Other-Modules:
-                   Paths_fficxx
-
+  build-depends:
+    base ==4.*,
+    Cabal,
+    bytestring,
+    containers,
+    data-default,
+    directory,
+    either,
+    errors,
+    filepath >1,
+    hashable,
+    haskell-src-exts,
+    lens >3,
+    mtl >2,
+    process,
+    pureMD5,
+    split,
+    transformers >=0.3,
+    template,
+    template-haskell,
+    text,
+    unordered-containers
+  exposed-modules:
+    FFICXX.Generate.Builder
+    FFICXX.Generate.Type.Class
+    FFICXX.Generate.Type.Module
+    FFICXX.Generate.Type.PackageInterface
+    FFICXX.Generate.Config
+    FFICXX.Generate.Code.MethodDef
+    FFICXX.Generate.Code.Cpp
+    FFICXX.Generate.Code.HsFrontEnd
+    FFICXX.Generate.Code.HsFFI
+    FFICXX.Generate.Code.Cabal
+    FFICXX.Generate.Code.Dependency
+    FFICXX.Generate.Generator.Driver
+    FFICXX.Generate.Generator.ContentMaker
+    FFICXX.Generate.Util
+    FFICXX.Generate.Util.HaskellSrcExts
+    FFICXX.Generate.QQ.Verbatim
+    FFICXX.Generate.Type.Annotate
+    FFICXX.Paths_fficxx
+  other-modules:
+    Paths_fficxx
+  default-language: Haskell2010
